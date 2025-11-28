@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Soumik Pal - Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Define the color variables */
+        :root {
+            --color-blue: #1a73e8; 
+            --color-black: #1e1e1e; 
+            --color-white: #ffffff;
+            --color-light-gray: #f4f4f4; 
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--color-black);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            min-width: 320px; 
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--color-blue);
+            border-bottom: 2px solid var(--color-blue);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+       
+        .navbar {
+            background-color: var(--color-blue);
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--color-white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 400;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        
+        .hero {
+            background-color: var(--color-light-gray);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            text-align: left;
+        }
+        
+        
+        .hero-text {
+            flex-grow: 1;
+        }
+
+        .hero-image-container {
+            flex-shrink: 0;
+            order: 2; 
+        }
+
+        .hero-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--color-white); 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); 
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 5px;
+            color: var(--color-black);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #555;
+            font-weight: 300;
+        }
+
+        
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        
+        .list-item {
+            margin-bottom: 25px;
+            padding: 15px;
+            border-left: 4px solid var(--color-blue);
+            background-color: var(--color-white);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .list-item h3 {
+            color: var(--color-black);
+            font-size: 1.15rem;
+            margin-bottom: 5px;
+        }
+
+        .list-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: background-color 0.3s;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--color-blue);
+        }
+
+        
+        .footer {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .social-links a {
+            color: var(--color-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--color-white);
+        }
+
+        
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero-content {
+                flex-direction: column; 
+                text-align: center;
+            }
+
+            .hero-image-container {
+                order: -1; 
+                margin-bottom: 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .social-links a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="navbar">
+        <div class="nav-content">
+            <a href="www.linkedin.com/in/soumikpal-data" class="nav-logo">SP</a>
+            <nav class="nav-links">
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm Soumik Pal.</h1>
+                <p>Student | B.Tech CSE, 1st Year | Lovely Professional University </p>
+            </div>
+            <div class="hero-image-container">
+                <img src="IMG1.jpg" alt="Soumik Pal" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>I am a first-year B.Tech CSE student at Lovely Professional University, specializing in Data Science and Machine Learning. I aim to become a skilled Data Scientist and have strong aspirations for higher studies, including pursuing an M.Tech followed by a Ph.D. I enjoy solving Python programming questions and continuously improving my analytical thinking. Along with Python, I also have knowledge of HTML, CSS, and basic JavaScript, and I’m eager to explore more technologies to build a strong tech career.</p>
+    </section>
+
+    
+    <section id="education" class="section">
+        <h2>Education</h2>
+        <div class="list-item">
+            <h3>B.Tech in Computer Science Engineering (Data Science & ML)</h3>
+            <p>Lovely Professional University, Punjab | Current</p>
+        </div>
+        <div class="list-item">
+            <h3>Senior Secondary (XII), Science Stream (PCMC)</h3>
+            <p>Vidyasagar Vidyapith, Midnapore | WBCHSE Board | 2024 | 84.20%</p>
+        </div>
+        <div class="list-item">
+            <h3>Secondary (X)</h3>
+            <p>Ramakrishna Mission Vidyabhavan, Midnapore | WBSE Board | 2022 | 90.46%</p>
+        </div>
+    </section>
+
+    
+    <section id="skills" class="section">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+            <span class="skill-tag">C</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">Canva</span>
+            <span class="skill-tag">MS Word</span>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="list-item">
+            <h3>Beginner-Level-Calculator-Project</h3>
+            <p>A beginner-friendly digital calculator featuring clean UI and essential arithmetic operations, built using interactive button handling and real-time expression evaluation for quick and accurate results.</p>
+        </div>
+        <div class="list-item">
+            <h3>Square-Circle-Game</h3>
+            <p>An interactive shape-based UI displaying a square, diamond, and circle that change colors on hover, showcasing basic web layout, transformations, and styling techniques for engaging user experience.</p>
+        </div>
+        <div class="list-item">
+            <h3>Cartoon-Character-Card-Display</h3>
+            <p>A creative display of cartoon character cards arranged with layered rotations and hover effects, making the UI playful and interactive while showcasing styling, positioning, and image handling skills.</p>
+        </div>
+        <div class="list-item">
+            <h3>Beginner-Level-Personal-Portfolio-Website</h3>
+            <p>A clean and responsive portfolio showcasing my skills, education, projects, and contact links with a modern UI, smooth navigation, and a visually appealing hero section designed to present my professional identity effectively.</p>
+        </div>
+        <div class="list-item">
+            <h3>Rock-Paper-Scissors-Game</h3>
+            <p>A simple Python Rock-Paper-Scissors game using conditional logic and random module. The program takes user input, generates a computer choice, compares outcomes using game rules, and displays win, lose, or tie results in a loop.</p>
+        </div>
+        <div class="list-item">
+            <h3>Random-Password-Generator</h3>
+            <p>A Python password generator that creates secure 10-character passwords using random selection and string operations. It mixes letters and digits, loops through characters, and uses the random module to ensure strong and unpredictable results.</p>
+        </div>
+
+    </section>
+    
+    
+    <section class="section">
+        <h2>Certifications</h2>
+        <div class="list-item">
+            <h3>upGrad Certified Advanced Power BI Workshop</h3>
+            <p>Focus on advanced Power BI skills: data modeling, DAX formulas, visuals, dashboards, data transformation, and analytical insight building. (Issued: 20 Nov, 2025)</p>
+        </div>
+        <div class="list-item">
+            <h3>udemy Certified Python Programming for beginners</h3>
+            <p>Focus on Python basics: variables, loops, functions, data types, simple projects, and coding logic improvement. (Issued: 14 Sep, 2025)</p>
+        </div>
+        <div class="list-item">
+            <h3>LinkedIn Learning Certified Time Management Tips</h3>
+            <p>Focus on priorities, plan tasks smartly, reduce distractions, manage deadlines, improve productivity, and achieve goals effectively. (Issued: 02 Nov, 2025)</p>
+        </div>
+    </section>
+
+    
+    <footer id="contact" class="footer">
+        <p>Connect With Me</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/soumikpal-data" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Soumik633" target="_blank">GitHub</a>
+            <a href="https://www.hackerrank.com/soumikpal675" target="_blank">HackerRank</a>
+        </div>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #aaa;">&copy; 2025 Soumik Pal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
